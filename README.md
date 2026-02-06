@@ -1,0 +1,99 @@
+# 🔋 Electro-Thermal RC Battery Pack Model with EKF SOC Estimation (MATLAB)
+
+This project implements a physics-inspired Li-ion battery pack simulation using an equivalent circuit model (ECM) with:
+
+- SOC dynamics
+- 1-RC Thevenin electrical model
+- Multi-cell series pack
+- Weakest-cell protection logic
+- Pulse-current (HPPC-style) testing
+- Parameter identification (R0 and RC time constant)
+- Electro-thermal coupling
+- Temperature-dependent resistances
+- Extended Kalman Filter (EKF) for SOC estimation
+
+The goal is to replicate **core Battery Management System (BMS) algorithms** used in EVs.
+
+---
+
+## 📌 Features Implemented
+
+### Electrical Model
+- Coulomb counting SOC update
+- OCV(SOC) function
+- Ohmic resistance R0
+- Polarization branch R1–C1
+- Discrete-time state equations
+
+### Pack-Level Modeling
+- Series-connected cells
+- Cell-to-cell voltage variation
+- Pack voltage aggregation
+- Undervoltage protection based on weakest cell
+
+### Thermal Model
+- I²R heat generation
+- Ambient cooling
+- Lumped thermal RC
+- Temperature-dependent R0 and R1
+
+### Parameter Identification
+- R0 extraction from voltage step
+- RC time constant identification from Vrc relaxation
+
+### State Estimation
+- EKF estimating:
+  - SOC
+  - Polarization voltage
+- Voltage-based correction
+- Noisy measurement scenario
+
+---
+
+## 🧠 Mathematical Model
+
+### SOC Dynamics
+
+SOC update:
+
+SOC(k+1) = SOC(k) − (I·Δt)/(Q·3600)
+
+---
+
+### RC Polarization State
+
+Vrc(k+1) = a·Vrc(k) + R1·(1 − a)·I
+
+where:
+
+a = exp(−Δt / (R1·C1))
+
+---
+
+### Terminal Voltage
+
+V = OCV(SOC) − I·R0 − Vrc
+
+---
+
+### Thermal Dynamics
+
+Cth·dT/dt = I²·R0 − h·(T − Tamb)
+
+---
+
+### EKF State Vector
+
+x = [ SOC ; Vrc ]
+
+Measurement:
+
+Vmeas = OCV(SOC) − I·R0 − Vrc
+
+---
+
+## ▶️ How to Run
+
+1. Open MATLAB.
+2. Run:
+
