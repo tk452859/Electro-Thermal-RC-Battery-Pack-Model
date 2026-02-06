@@ -97,3 +97,64 @@ Vmeas = OCV(SOC) − I·R0 − Vrc
 1. Open MATLAB.
 2. Run:
 
+
+3. Observe plots:
+   - Current pulses
+   - Pack voltage
+   - Cell voltages
+   - Temperature rise
+   - EKF SOC convergence
+
+---
+
+## 📊 Example Outputs
+
+- RC relaxation after pulses
+- Estimated time constant τ ≈ R1·C1
+- EKF SOC converging from wrong initial guess
+- Temperature rise during discharge pulses
+
+(Add screenshots of plots here)
+
+---
+
+## 💡 Key Engineering Insights
+
+- Terminal voltage relaxation is contaminated by SOC drift → RC states must be isolated.
+- Temperature affects resistance and RC dynamics.
+- Parameter dispersion across cells biases pack-level identification.
+- EKF improves SOC accuracy compared to coulomb counting alone.
+- Weakest-cell logic dominates pack-level protection.
+
+---
+
+## 🧪 Applications
+
+- EV battery algorithm development
+- BMS software prototyping
+- SOC/SOH research
+- Thermal derating studies
+- Charging strategy development
+- Fault injection experiments
+
+---
+
+## 🚀 Future Extensions
+
+Optional upgrades:
+
+- SOC-dependent lookup tables
+- Aging model (capacity fade, resistance growth)
+- SOH estimator
+- Active cell balancing
+- Multi-RC branches
+- CAN interface simulation
+- Drive cycle profiles (WLTP)
+- Fast-charging derating logic
+
+---
+
+## 👤 Author
+
+Tarun Singh  
+Electrical Engineering | EV & BMS Modeling  
