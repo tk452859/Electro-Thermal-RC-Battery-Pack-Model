@@ -116,6 +116,7 @@ Vmeas = OCV(SOC) − I·R0 − Vrc
 
 <img width="1740" height="749" alt="pack_voltage and pulse" src="https://github.com/user-attachments/assets/a8e70cd0-39de-4e26-9ac0-107e86486282" />
 <img width="1817" height="785" alt="ekf_soc" src="https://github.com/user-attachments/assets/9f5e37e4-4789-4b3b-af9e-263683493c09" />
+<img width="1789" height="781" alt="temperature" src="https://github.com/user-attachments/assets/0b98a05f-0564-4f62-8807-fad9afd89c41" />
 
 
 ---
